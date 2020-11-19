@@ -1,0 +1,27 @@
+<div style="padding: 40px 20px;" class="container">
+  <h2 style="text-align: center;">Heading</h2>
+
+  <div style="padding: 20px 10px; text-align: end;" class="SearchBar">
+    <input type="text" [(ngModel)]="searchword" />
+    <button (click)="searchThis()">Search</button>
+  </div>
+
+  <div class="row">
+    <!-- {{data | json}} -->
+    <div *ngFor="let item of products | myfilter:filterargs" class=" product" class="col-md-4">
+      <div class="card">
+        <!-- <div class="card-header">Header</div> -->
+        <div class="card-body">
+          <img style="width: 100%;" class="product__image" [src]="item.image" alt="">
+        </div>
+        <div class="card-footer">
+          <p class="product__title">Test Name:{{item.itemName}}</p>
+          <p class="product__price">Price: {{item.minPrice}} Rs</p>
+          <p class="product__price">Lab Name: {{item.labName}}</p>
+          <button class="product__removeButton" (click)="addToCart($event,item.id, item)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

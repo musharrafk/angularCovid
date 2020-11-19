@@ -1,0 +1,26 @@
+<div style="padding: 40px 20px;" class="container">
+    <h2 style="text-align: center;">Order Details</h2>
+  
+   <div class="row">
+    <div class="col-md-2" ><strong>Test Name</strong></div>
+    <div class="col-md-2" ><strong>Price </strong></div>
+    <div class="col-md-2" ><strong>Lab Name</strong></div>
+    <div class="col-md-2" ><strong>Date</strong></div>
+    <div class="col-md-2" ><strong>Patient Name</strong></div>
+
+   </div>
+  
+      <!-- {{data | json}} -->
+      <div *ngFor="let item of orderList | myfilter:filterargs" class=" product" class="row">
+       <div class="col-md-2" >{{item.itemName}}</div>
+       <div class="col-md-2" > {{item.minPrice}} Rs</div>
+       <div class="col-md-2" > {{item.labName}}</div>
+       <div class="col-md-2" > {{item.created}}</div>
+       <div class="col-md-2" >{{item.first_name}}</div>
+       
+           
+          </div>
+      
+     
+  </div>
+  

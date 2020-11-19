@@ -1,0 +1,142 @@
+.table td, .table th{ padding: 10px;}
+.user-card .u-content{ padding: 10px 0 0 0;}
+.shadow-white{ box-shadow: 0 0 0 3px #ddd !important; border-radius: 100%;}
+.user-card{ border-top:2px solid #2785bf;}
+.user-card th, .user-card td{ border: none;}
+.easypiechart .data_value {
+    color: #2f2c2c;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 100px;
+    z-index: 2;
+    font-weight: 600;
+}
+.todo-list li{border-bottom: 1px solid #eee; text-align: left; font-size: 12px; padding-bottom: 5px; padding-top: 5px;}
+.user_dashboard p{ margin-bottom: 0px;}
+.user_dashboard button{ padding: 3px 5px !important;}
+.faculty_list, .school_list{ overflow: auto;}
+.student_title b{font-weight: 600;}
+.student_title{border: none;}
+
+
+.content{
+  padding-left: 20px;
+}
+.user-card .avatar {
+  margin: 0 auto 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+
+.user-card .u-content {
+  padding: 10px 0 0;
+  text-align: center;
+}
+
+.shadow-white {
+  box-shadow: 0 0 0 3px #ddd!important;
+  border-radius: 100%;
+}
+
+.img-70 {
+  width: 70px;
+  display: inline-block;
+}
+.user-card .avatar i.fa {
+  position: absolute;
+  top: 38px;
+  left: -5px;
+}
+
+.fa-green, .fa-light-green {
+  color: #4caf50;
+}
+.link_cursor {
+  cursor: default;
+}
+
+a {
+  color: #337ab7;
+}
+
+h4{
+  font-family: Poppins;
+    font-weight: 400;
+}
+
+.user_dashboard p {
+  margin-bottom: 0;
+}
+
+
+.text-center {
+  text-align: center!important;
+}
+
+
+.widget.widget-tile {
+  padding: 0;
+  margin-bottom: 15px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 7px 0 rgba(184,184,184,.5);
+}
+
+.widget {
+  background-color: #fff;
+  transition: .7s;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.skill-circle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.easypiechart {
+  display: inline-block;
+  height: 100px;
+  position: relative;
+  text-align: center;
+  width: 100px;
+  margin: 15px;
+  margin: -65px;
+}
+
+.easypiechart .data_value {
+  color: #2f2c2c;
+  display: inline-block;
+  font-size: 22px;
+  line-height: 100px;
+  z-index: 2;
+  font-weight: 600;
+  top: 100px;
+  position: relative;
+}
+
+.easypiechart canvas {
+  left: 0 !important;
+  position: absolute !important;
+  /* top: 0 !important; */
+  height: 100px;
+  width: 100px;
+}
+
+.skill-head {
+  /* font-family: Poppins; */
+  font-size: 16px;
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  background: #f3f3f7;
+  padding: 5px;
+  color: #231f20;
+}
+a:hover{
+   text-decoration: none;
+}

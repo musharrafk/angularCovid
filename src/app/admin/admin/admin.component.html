@@ -1,0 +1,48 @@
+<div class=" container-fluid">
+  <div style="padding-left:200px;text-align: right;" ><a routerLink="/admin/order">Cart <small>({{cartProductCount}})</small></a></div>
+  <div class="sidebar" style="width: 150px;" data-background-color="red"
+    data-image="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <div class="logo">
+      <div class="logo-text">Covid Test</div>
+    </div>
+    <ul class="nav" style="list-style: none;">
+      <!-- <div *ngFor="let item of moduleData"> -->
+      <!-- <a class="nav-link" routerLink="{{ item.page_url }}"> -->
+      <!-- <li>
+        <a class="nav-link" routerLink="/dashboard">
+          <i class="material-icons">home</i>
+          <p>Home</p>
+        </a>
+      </li> -->
+      <!-- </div> -->
+      <li>
+        <a class="nav-link" routerLink="/admin/dashboard">
+          <!-- <i class="material-icons">edit</i> -->
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/admin/total">
+          <!-- <i class="material-icons">edit</i> -->
+          <p>Test Details</p>
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" routerLink="/admin/order">
+          <!-- <i class="material-icons">pending</i> -->
+          <p>Order Details</p>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" style="cursor: pointer;" (click)="logOut()">
+          <i class="material-icons">input</i>
+          <p>Logout</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div style="padding-left: 120px;">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,142 @@
+<div class="header_top">
+
+  <section style="padding-left: 30px;" class="content-header">
+    <h1 style="font-size: 17px!important;font-weight: bold;">Dashboard <small></small></h1>
+
+  </section>
+</div>
+
+<div class="content">
+  <div class="container-fluid">
+    <!-- Status Row -->
+    <div class="row user_dashboard">
+
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-md-12 ">
+            <div class=" widget widget-tile user-card">
+              <!-- <div class="u-img img-cover" style="background-image: url(../img/cards/2.jpg);"></div> -->
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="u-content">
+                    <div class="avatar box-80">
+                      <img class="img-responsive img-circle img-70 shadow-white"
+                        src="https://www.mbx.co.in/MBX-V2/assets/img/avatars/avatar4.png" alt="" />
+                      <i class="fa fa-circle-o fa-green"></i>
+                      <!-- <a href="javascript:void(0)"
+                                                      (click)="EditProfile(userInfo.user_id)">Edit</a> -->
+                    </div>
+                    <h5>
+                      <a class="text-black link_cursor">NAME</a>
+                    </h5>
+                    <p class="">{{name}}</p>
+                    <div class="text-center">
+                      <!-- <button type="submit" class="btn btn-raised btn-primary" href="javascript:void(0)" -->
+                      <!-- (click)="EditProfile(userInfo.user_id)"> Edit</button> -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="table-wrap">
+                    <div class="table-responsive">
+                      <table class="table visitors-country">
+                        <tbody>
+                          <tr>
+                            <th width="120">Email</th>
+                            <td>{{email}}</td>
+                          </tr>
+                          <tr>
+                            <th width="120">Mobile</th>
+                            <!-- <td>9876543221</td> -->
+                          </tr>
+
+                          <tr>
+                            <th width="120">&nbsp;</th>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!multiple" class="col-sm-12">
+        <div class=" row">
+          <div class="col-sm-4 col-xs-6">
+            <a routerLink="../../admin/total">
+              <div class="widget widget-tile">
+                <span id="pie_chart_1" class="easypiechart skill-circle" data-percent="100">
+                  <span class="data_value head-font">{{total}}</span>
+                </span>
+                <span class="skill-head">Total</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-4 col-xs-6">
+            <a routerLink="../../admin/completed">
+              <div class="widget widget-tile">
+                <span id="pie_chart_2" class="easypiechart skill-circle" data-percent="100">
+                  <span class="data_value head-font">{{completed}}</span>
+                </span>
+                <span class="skill-head">Completed</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-4 col-xs-6">
+            <a routerLink="../../admin/pending">
+              <div class="widget widget-tile">
+                <span id="pie_chart_3" class="easypiechart skill-circle" data-percent="100">
+                  <span class="data_value head-font">{{pending}}</span>
+                </span>
+                <span class="skill-head">Pending</span>
+              </div>
+            </a>
+          </div>
+
+
+
+        </div>
+      </div>
+      <div *ngIf="multiple">
+        <!-- <div class="widget widget-tile">
+          <span id="pie_chart_1" class="easypiechart skill-circle" data-percent="100">
+            <span class="data_value head-font">{{brands.value}}</span>
+          </span>
+          <span class="skill-head">{{brands.type}}</span>
+        </div> -->
+
+
+        <div *ngFor="let item of multipleBrandData;let main = index">
+          <p style="padding-left: 17px;">{{item.brand_name | uppercase }}</p>
+          <div class="col-sm-12">
+            <div class=" row">
+              <!-- {{item.data |json}} -->
+              <!-- <p *ngFor="let x of item.data">2</p> -->
+              <div *ngFor="let brands of item.data; let index= index" class="col-sm-4 col-xs-6">
+                <a routerLink="../../admin/{{brands?.type}}">
+                  <div class="widget widget-tile">
+                    <span id="pie_chart_{{main}}{{index}}" class="easypiechart skill-circle" data-percent="100">
+                      <span class="data_value head-font">{{brands?.value}}</span>
+                    </span>
+                    <span class="skill-head">{{brands?.type | titlecase}}</span>
+                  </div>
+                </a>
+                {{renderPieChart(main,index)}}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

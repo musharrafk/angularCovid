@@ -1,0 +1,85 @@
+<!-- <div class="row"> -->
+<div>
+  <div class="card">
+    <div class="card-header card-header-primary">
+      <h4 class="card-title">Edit Profile</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="photographer" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field>
+              <input
+                type="text"
+                matInput
+                formControlName="first_name"
+                placeholder="First Name"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input
+                type="text"
+                matInput
+                formControlName="last_name"
+                placeholder="Last Name"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field>
+              <input
+                type="text"
+                matInput
+                formControlName="username"
+                placeholder="username"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input
+                type="email"
+                matInput
+                formControlName="email"
+                placeholder="Email address"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field>
+              <input
+                type="contact"
+                formControlName="mobile"
+                matInput
+                placeholder="Conatct No."
+              />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <mat-label>Are you a</mat-label>
+              <mat-select formControlName="role">
+                <mat-option value="freelancer">Freelancer</mat-option>
+                <mat-option value="studio">Studio</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <button style="border: 0.5px solid #000;" type="submit" mat-button>
+          submit
+        </button>
+        <div class="clearfix"></div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+
+<div class="card"></div>

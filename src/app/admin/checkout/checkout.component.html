@@ -1,0 +1,47 @@
+<div style="padding: 40px 20px;" class="container">
+    <h2 style="text-align: center;">Cart Details</h2>
+  
+   <div class="row">
+    <div class="col-md-2" ><strong>Test Name</strong></div>
+    <div class="col-md-2" ><strong>Price </strong></div>
+        <div class="col-md-2" ><strong>Date</strong></div>
+    <div class="col-md-2" ><strong>Patient Name</strong></div>
+    <div class="col-md-2" ><strong>Reomve</strong></div>
+
+   </div>
+  
+      <!-- {{data | json}} -->
+      <div *ngFor="let item of orderList | myfilter:filterargs" class=" product" class="row">
+       <div class="col-md-2" >{{item.itemName}}</div>
+       <div class="col-md-2" > {{item.minPrice}} Rs</div>
+       <div class="col-md-2" > {{item.created}}</div>
+       <div class="col-md-2" >{{item.first_name}}</div>
+       <div class="col-md-2" (click)="removeItem(item.id)">delete</div>
+       
+           
+          </div>
+          <div class="row"></div>
+          <form [formGroup]="orderForm">
+                <div class="row" style="padding-top:50px;">
+                            
+                        <div class="col-md-3 formCotrol">
+                            <input type="text" name="Name" formControlName="patient_name" placeholder="Patient Name">
+                        
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <input type="text" name="contact" formControlName="patient_contact" placeholder="Patient Contact">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="number" name="age" formControlName="patient_age" placeholder="Patient Age">
+                        </div>
+                        <div class="col-md-3">
+                        <button (click)="submit()" >Place Order</button>
+                </div>
+                    
+            </div> 
+        </form>     
+     
+  </div>
+  
+  

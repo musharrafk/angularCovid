@@ -1,0 +1,159 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <mat-nav-list>
+      <a *ngIf="!loggedIn" mat-list-item>
+        <mat-icon class="icon">input</mat-icon>
+        <span class="label">Login</span>
+      </a>
+      <a mat-list-item routerLink="/">
+        <mat-icon class="icon">home</mat-icon>
+        <span class="label">Home</span>
+      </a>
+      <a mat-list-item routerLink="/dashboard">
+        <mat-icon class="icon">dashboard</mat-icon>
+        <span class="label">Admin</span>
+      </a>
+      <a *ngIf="loggedIn" mat-list-item (click)="logOut()">
+        <mat-icon class="icon">input</mat-icon>
+        <span class="label">LogOut</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>
+        <a routerLink="/">
+          PHOTO KER
+        </a>
+      </div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li>
+            <a *ngIf="!loggedIn" routerLink="/login">
+              <mat-icon class="icon">input</mat-icon>
+              <span class="label">Login</span>
+            </a>
+          </li>
+          <li>
+            <a *ngIf="!loggedIn" routerLink="/register">
+              <mat-icon class="icon">input</mat-icon>
+              <span class="label">register</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/">
+              <mat-icon class="icon">home</mat-icon>
+              <span class="label">Home</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/admin">
+              <mat-icon class="icon">dashboard</mat-icon>
+              <span class="label">Admin</span>
+            </a>
+          </li>
+          <li>
+            <a *ngIf="loggedIn" (click)="logOut()">
+              <mat-icon class="icon">input</mat-icon>
+              <span class="label">LogOut</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <main>
+      <!-- <router-outlet></router-outlet> -->
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- {{ loggedIn }} -->
+
+<div class="container p-4">
+  <div class="row">
+    <div class="col text-center">
+      <!-- <a (click)="changeState('state1')"> -->
+      <!-- Change to State 1
+      </a> -->
+    </div>
+    <div class="col text-center">
+      <!-- <a (click)="changeState('state2')"> -->
+      <!-- Change to State 2 -->
+      <!-- </a> -->
+    </div>
+  </div>
+  <div class="row justify-content-center align-item-center">
+    <!-- <app-login [currentState]="toState"></app-login> -->
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="columns">
+        <div class="column is-5">
+          <h3 class="notification">Create a new post</h3>
+          <div *ngIf="infoMsg" class="notification is-success">
+            {{ infoMsg }}
+          </div>
+          <div *ngIf="errorMsg" class="is-danger notification">
+            {{ errorMsg }}
+          </div>
+          <form>
+            <div><label>Message: </label></div>
+            <div>
+              <textarea
+                [(ngModel)]="content"
+                rows="3"
+                matinput
+                cols="50"
+                [disabled]="isSending"
+                name="content"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div class="is-7"></div>
+      </div>
+
+      <button
+        (click)="postSubmit()"
+        class="button is-info"
+        [disabled]="isSending"
+      >
+        Send
+      </button>
+    </div>
+    <div class="col-md-4">
+      <h1 class="notification is-info">Your feed</h1>
+      <div class="columns">
+        <div class="column is-7">
+          <div *ngFor="let feed of data">
+            <div class="box">
+              <div *ngFor="let user of userdata">
+                {{ user.firstName }} {{ user.lastName }}
+              </div>
+              <p>
+                {{ feed.body }}<br />
+                <small>{{ feed.time }}</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h2>Your Old Posts</h2>
+      <div *ngFor="let all of posts">
+        {{ userdata }}<br />
+        {{ all.post }}
+        <br /><br />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<style>
+  .class {
+    width: 310px;
+    margin: 12% auto;
+    border-radius: 12px;
+    padding: 3em 2em 3em 2em;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0, 0, 0, 0.14902) 1px 5px 5px 5px, rgba(0, 0, 0, 0.09804) 0px 0px 0px 0px;
+  }
+
+  .input {
+    padding: 10px 0;
+  }
+</style>
+<div class="container" style="padding: 20px; text-align: center;">
+  <div class="class">
+    <mat-card-title>Covid Test Login</mat-card-title>
+
+    <form style="padding-top:40px;" [formGroup]="login" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input class="input" matInput required placeholder="name" formControlName="email" type="text">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input class="input" matInput required placeholder="password" formControlName="password" type="password">
+      </mat-form-field>
+      <br>
+      <button mat-flat-button color="accent" type="submit">submit</button>
+    </form>
+  </div>
+</div>
